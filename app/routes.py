@@ -1,5 +1,7 @@
 
-from flask import render_template, url_for, redirect, request
+from crypt import methods
+from os import abort
+from flask import render_template, url_for, redirect, request, abort
 from app.forms import RegForm, LogForm, Comment
 from app import app, db, bcrypt
 from app.models import User, Post
@@ -62,7 +64,7 @@ def profile():
     title = 'User Account'
     return render_template('profile.html', title = title)
 
-# @TODO: Create newPitch route 
+# @TODO: Create Post 
 @app.route('/post/new', methods=['GET', 'POST'])
 def post_new():
     form = Comment()
@@ -73,9 +75,9 @@ def post_new():
 
         return redirect(url_for('home'))
 
-    return render_template('post.html',legend='Create Pitch', form = form)
+    return render_template('post.html',legend='Create Post', form = form)
 
-# @TODO: Get singlePitch
+# @TODO: Get Single Post
 @app.route('/single-post/<int:post_id>')
 @login_required
 def single_post(post_id):
@@ -84,18 +86,40 @@ def single_post(post_id):
     return render_template('single_post.html', title = title, post = post)
 
 
-# @TODO: Comment on a SinglePitch
-@app.route('/single-post/<int:post_id>/comment', methods=['GET', 'POST'])
+# @TODO: Update a Post
+# @app.route('/single-post/<int:post_id>/comment', methods=['GET', 'POST'])
 # @login_required
-def comment(post_id):
+# def comment(post_id):
+#     post = Post.query.get_or_404(post_id)
+#     title = 'Comment'
+#     form = Comment()
+#     if form.validate_on_submit():
+#         post.post_content = form.post_content.data
+#         db.session.commit()
+#         return redirect(url_for('single_post', post_id = post.id))
+#     elif request.method == 'GET':
+#         form.post_content.data = post.content
+
+#     return render_template('post.html', title=title,legend='Comment', form = form)
+
+
+@app.route('/single-post/<int:post_id>/update', methods=['GET', 'POST'])
+@login_required
+def update(post_id):
     post = Post.query.get_or_404(post_id)
-    title = 'Comment'
+    if post.author != current_user:
+        abort(403)
     form = Comment()
     if form.validate_on_submit():
-        post.post_content = form.post_content.data
-        db.session.commit()
-        return redirect(url_for('single_post', post_id = post.id))
-    elif request.method == 'GET':
-        form.post_content.data = post.content
+        post.title = form.post_title.data
+        post.content = form.post_content.data
 
-    return render_template('post.html', title=title,legend='Comment', form = form)
+        db.session.commit()
+        return redirect(url_for('single_post', post_id=post.id))
+    elif request.method == 'GET':  
+        form.post_title.data = post.title
+        form.post_content.data = post.content
+    return render_template('post.html',legend='Update Post', form = form)
+
+
+    
