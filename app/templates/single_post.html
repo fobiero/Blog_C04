@@ -1,0 +1,28 @@
+{% extends "default.html" %} {% block content %}
+<article class="media content-section">
+    <div class="media-body">
+        <div class="art_cont">
+            <a class="mr-2" href="#">{{ post.author.username }}</a>
+            <small class="text-muted">{{ post.date_posted.strftime('%Y.%m.%d') }}</small>
+        </div>
+        <h2 class="article-title">{{ post.title }}</h2>
+        <p class="article-content">{{ post.content }}</p>
+        <div class="form-group">
+            <textarea name="textarea" placeholder="Comment here!"></textarea>
+        </div>
+
+        <!-- controllers || btn (delete, update, post) -->
+        <!-- <div class="art-mr">
+            <div class="comment">
+                <a href="#"></i>Publish</a>
+            </div>
+            <div class="like">
+                <a href="#"><i class="fa-thin fa-thumbs-up"></i>UpVoke</a>
+            </div>
+            <div class="dis_like">
+                <a href="#"><i class="fa-thin fa-thumbs-down"></i>DownVoke</a>
+            </div>
+        </div> -->
+    </div>
+</article>
+{% endblock content %}

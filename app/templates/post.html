@@ -1,0 +1,23 @@
+{% extends 'default.html' %} {% block content %}
+
+<form action="" method="POST">
+    {{form.hidden_tag()}}
+    <fieldset class="form-group">
+        <legend class="border-bottom mb-4">{{legend}}</legend>
+        <div class="form-group">
+            {{form.post_title.label(class='form-control-label')}}
+            <!-- input  -->
+            {{form.post_title(class='form-control form-control-lg')}}
+        </div>
+        <div class="form-group">
+            {{form.post_content.label(class='form-control-label')}}
+            <!-- input  -->
+            {{form.post_content(class='form-control form-control-lg')}}
+        </div>
+    </fieldset>
+    <div class="form-group">
+        {{form.submit_post(class='btn btn-outline-info')}}
+    </div>
+</form>
+
+{% endblock content %}

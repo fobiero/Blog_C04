@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --pri_color: #428bca;
+}
+
+body {
+    background: #fafafa;
+    color: #333333;
+    margin-top: 5rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #444444;
+}
+
+.nav_tag {
+    background-color: var(--pri_color);
+}
+
+.navbar-expand-md .navbar-collapse {
+    display: flex!important;
+    flex-basis: auto;
+    justify-content: space-between !important;
+}
+
+.site-header .navbar-nav .nav-link {
+    color: #cbd5db;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+    color: #ffffff;
+}
+
+.site-header .navbar-nav .nav-link.active {
+    font-weight: 500;
+}
+
+.content-section {
+    background: #ffffff;
+    padding: 10px 20px;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+
+.article-title {
+    color: #444444;
+}
+
+a.article-title:hover {
+    color: var(--pri_color);
+    text-decoration: none;
+}
+
+.article-content {
+    white-space: pre-line;
+}
+
+.art_cont {
+    padding-bottom: 1px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid #e3e3e3
+}
+
+.art_cont a:hover {
+    color: #333;
+    text-decoration: none;
+}
+
+.article-svg {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+}
+
+.account-img {
+    height: 125px;
+    width: 125px;
+    margin-right: 20px;
+    margin-bottom: 16px;
+}
+
+.account-heading {
+    font-size: 2.5rem;
+}
+
+#pop_pi {
+    color: var(--pri_color);
+    padding: 1rem 0;
+}
+
+
+/* COMENT SECTIION  */
+
+.art-mr {
+    display: flex;
+    /* padding: 1rem; */
+    align-items: center;
+    justify-content: space-between;
+}
+
+.art-mr a {
+    list-style: none;
+    text-decoration: none;
+}
+
+.art-mr a i {
+    font-size: 2rem;
+    padding: 0 .5rem 0 0;
+}
+
+.art-mr .comment a {
+    background-color: var(--pri_color);
+    padding: .5rem 2.2rem;
+    text-align: center;
+    color: #fff;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: .2rem;
+}
+
+textarea {
+    border: ipx solid #cbd5db;
+    outline: none;
+    padding: 2rem;
+    width: 100%;
+    opacity: .5;
+    font-weight: 300;
+    letter-spacing: .2rem;
+}
