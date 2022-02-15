@@ -145,3 +145,19 @@ a.article-title:hover {
     font-weight: 300;
     letter-spacing: .2rem;
 }
+
+.btn-outline-info {
+    margin: 1rem 0;
+    color: var(--pri_color);
+    border-color: var(--pri_color);
+    outline: none;
+}
+
+.btn-outline-info:hover {
+    background-color: var(--pri_color);
+    color: #fff;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
