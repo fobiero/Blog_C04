@@ -73,7 +73,7 @@ def post_new():
 
         return redirect(url_for('home'))
 
-    return render_template('post.html',legend='Create Post', form = form)
+    return render_template('post.html',legend='Create Pitch', form = form)
 
 # @TODO: Get singlePitch
 @app.route('/single-post/<int:post_id>')
@@ -89,14 +89,13 @@ def single_post(post_id):
 # @login_required
 def comment(post_id):
     post = Post.query.get_or_404(post_id)
-    title = 'Post'
+    title = 'Comment'
     form = Comment()
     if form.validate_on_submit():
         post.post_content = form.post_content.data
         db.session.commit()
-        return redirect(url_for('new_post', post_id = post.id))
+        return redirect(url_for('single_post', post_id = post.id))
     elif request.method == 'GET':
         form.post_content.data = post.content
 
     return render_template('post.html', title=title,legend='Comment', form = form)
-

@@ -35,3 +35,4 @@ class Comment(FlaskForm):
     post_content = TextAreaField('Comment', validators=[DataRequired()])
     
     submit_post = SubmitField('Post')
+

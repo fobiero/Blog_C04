@@ -54,11 +54,13 @@ h6 {
 
 .article-title {
     color: #444444;
+    text-transform: capitalize;
 }
 
 a.article-title:hover {
     color: var(--pri_color);
     text-decoration: none;
+    cursor: pointer;
 }
 
 .article-content {
