@@ -9,7 +9,7 @@ Blog application is a platform where Users are able to share views (blog) posts 
 * A user is also able to delete the comments they found no appealing to the post
 <br>
 
-![Project Landing Page](https://github.com/fobiero/pitch_project_C03/blob/master/project.png?raw=true)
+![Project Landing Page](https://github.com/fobiero/Blog_C04/blob/master/app/static/blogPage.png?raw=true)
 
 
 ### SetUp / Installation Requirements
