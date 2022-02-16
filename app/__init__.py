@@ -7,7 +7,7 @@ from flask_login import LoginManager
 
 app = Flask(__name__)
 
-ENV = 'dev'
+ENV = 'prod'
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
@@ -17,7 +17,7 @@ if ENV == 'dev':
     app.config['SECRET_KEY'] = '4963fe5782355fc76e4821f231207f5f14216e10'
 else:
     app.debug = False
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://pjdhspwenpzbge:0bb5f9b23f5ea9bffb769e0bf5eea1f1b84a777aa5a3e1178ce5e025def0bc6b@ec2-54-209-221-231.compute-1.amazonaws.com:5432/d1f4533kntv8i4'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://sdogvgcnwlalft:64d928e3490fc7d4aacb691dc86c6820fe0174ec684a043777d031c1e0cb5e93@ec2-54-83-21-198.compute-1.amazonaws.com:5432/d4kvqed26qnl7p'
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     
