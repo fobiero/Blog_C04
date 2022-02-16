@@ -86,22 +86,6 @@ def single_post(post_id):
     return render_template('single_post.html', title = title, post = post)
 
 
-# @TODO: Update a Post
-# @app.route('/single-post/<int:post_id>/comment', methods=['GET', 'POST'])
-# @login_required
-# def comment(post_id):
-#     post = Post.query.get_or_404(post_id)
-#     title = 'Comment'
-#     form = Comment()
-#     if form.validate_on_submit():
-#         post.post_content = form.post_content.data
-#         db.session.commit()
-#         return redirect(url_for('single_post', post_id = post.id))
-#     elif request.method == 'GET':
-#         form.post_content.data = post.content
-
-#     return render_template('post.html', title=title,legend='Comment', form = form)
-
 # @TODO: Update Post Route 
 @app.route('/single-post/<int:post_id>/update', methods=['GET', 'POST'])
 @login_required
