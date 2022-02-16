@@ -14,7 +14,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 if ENV == 'dev':
     app.debug = True
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://moringa:root@localhost/moringa'
-    app.config['SECRET_KEY'] = '4963fe5782355fc76e4821f231207f5f14216e10'
+    app.config['SECRET_KEY'] = 'keysecretkey'
 else:
     app.debug = False
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://sdogvgcnwlalft:64d928e3490fc7d4aacb691dc86c6820fe0174ec684a043777d031c1e0cb5e93@ec2-54-83-21-198.compute-1.amazonaws.com:5432/d4kvqed26qnl7p'
