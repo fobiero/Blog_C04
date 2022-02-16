@@ -14,7 +14,6 @@ def home():
     posts = Post.query.all()
     return render_template('home.html', title = title, posts = posts)
 
-
 # @TODO: Register route 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -74,7 +73,6 @@ def post_new():
         db.session.commit()
 
         return redirect(url_for('home'))
-
     return render_template('post.html',legend='Create Post', form = form)
 
 # @TODO: Get Single Post
